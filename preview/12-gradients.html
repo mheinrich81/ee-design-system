@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Colors" name="Brand gradients" subtitle="Alpenglow + Twilight (used 1×/page)" viewport="700x250" -->
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 24px 28px; background: var(--snow); display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .panel { height: 200px; border-radius: 14px; padding: 18px 22px; display: flex; flex-direction: column; justify-content: space-between; color: white; font-family: var(--font-sans); position: relative; overflow: hidden; }
+  .alpenglow { background: var(--gradient-alpenglow); }
+  .twilight  { background: var(--gradient-twilight); }
+  .name { font-family: var(--font-display); font-size: 24px; font-weight: 600; letter-spacing: -0.01em; }
+  .meta { font-family: var(--font-mono); font-size: 11px; opacity: 0.85; line-height: 1.6; }
+  .note { position: absolute; top: 18px; right: 22px; font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.75; }
+</style></head>
+<body>
+  <div class="panel alpenglow">
+    <div class="note">Use ≤ 1×/page</div>
+    <div class="name">Alpenglow</div>
+    <div class="meta">alpenglow-400 → summit-600<br>135° linear</div>
+  </div>
+  <div class="panel twilight">
+    <div class="note">Dark surfaces</div>
+    <div class="name">Twilight</div>
+    <div class="meta">summit-700 → granite-950<br>180° vertical</div>
+  </div>
+</body></html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Type" name="Mono & metric" subtitle="JetBrains Mono · tabular metrics + code" viewport="700x180" -->
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 24px 32px; background: var(--snow); display: grid; grid-template-columns: 1fr 1.2fr; gap: 32px; align-items: center; }
+  .metric { font-family: var(--font-mono); font-size: 56px; font-weight: 500; letter-spacing: -0.03em; color: var(--granite-950); line-height: 1; font-variant-numeric: tabular-nums; }
+  .metric small { font-family: var(--font-mono); font-size: 18px; color: var(--granite-500); font-weight: 400; margin-left: 6px; }
+  .delta { font-family: var(--font-mono); font-size: 14px; color: var(--pine-600); margin-top: 8px; }
+  .code { background: var(--granite-100); border: 1px solid var(--granite-200); border-radius: 10px; padding: 14px 16px; font-family: var(--font-mono); font-size: 13px; line-height: 1.6; color: var(--granite-800); }
+  .code .k { color: var(--summit-600); }
+  .code .s { color: var(--pine-700); }
+  .tag { font-family: var(--font-mono); font-size: 11px; color: var(--granite-500); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 6px; }
+</style></head>
+<body>
+  <div>
+    <div class="tag">METRIC · JetBrains Mono</div>
+    <div class="metric">87<small>%</small></div>
+    <div class="delta">▲ 4.2 vs last week</div>
+  </div>
+  <div>
+    <div class="tag">CODE · MONO</div>
+    <div class="code">
+      <div><span class="k">--brand</span>: <span class="s">oklch(54% 0.170 295)</span>;</div>
+      <div><span class="k">--ease-summit</span>: <span class="s">cubic-bezier(0.2, 0.8, 0.2, 1)</span>;</div>
+    </div>
+  </div>
+</body></html>

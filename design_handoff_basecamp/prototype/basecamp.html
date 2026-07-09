@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Brand" name="Basecamp onboarding" -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Elevate Execution — Basecamp (onboarding explorations)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../../colors_and_type.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="basecamp.css">
+  <style>
+    /* Outer canvas page — sits behind the DesignCanvas */
+    html, body { height: 100%; }
+    body { margin: 0; background: #f0eee9; }
+    /* Disable transitions inside the dc artboards while we render — avoids
+       a flash of animations on initial mount */
+    .bc-artboard * { animation-play-state: running; }
+  </style>
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel" src="tweaks-panel.jsx"></script>
+  <script type="text/babel" src="design-canvas.jsx"></script>
+  <script type="text/babel" src="basecamp-data.jsx"></script>
+  <script type="text/babel" src="HandoffBasecampShell.jsx"></script>
+  <script type="text/babel" src="HandoffBasecampTrailMap.jsx"></script>
+  <script type="text/babel" src="HandoffBasecampCadenceBuilder.jsx"></script>
+  <script type="text/babel" src="HandoffBasecampWeekGrid.jsx"></script>
+
+  <script type="text/babel">
+    const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+      "density":  "cozy",
+      "sidebar":  "expanded",
+      "state":    "mid",
+      "theme":    "light",
+      "view":     "operator"
+    }/*EDITMODE-END*/;
+
+    const STATE_TO_STEPS = { empty: 0, mid: 2, handoff: 5 };
+
+    function Artboard({ variant, tweaks }) {
+      // Re-render lucide whenever React re-renders this subtree (state change,
+      // tweak change, etc.) — lucide replaces <i data-lucide> with inline SVGs.
+      React.useEffect(() => {
+        if (window.lucide) {
+          window.lucide.createIcons();
+        }
+      });
+
+      const completedSteps = STATE_TO_STEPS[tweaks.state] ?? 2;
+      const variantLabel = {
+        A: "Trail map",
+        B: "Cadence builder",
+        C: "Week grid",
+      }[variant];
+
+      const Variant = { A: VariantA, B: VariantB, C: VariantC }[variant];
+
+      return (
+        <div
+          className="bc-artboard"
+          data-density={tweaks.density}
+          data-sidebar={tweaks.sidebar}
+          data-theme={tweaks.theme}
+          data-view={tweaks.view}
+          data-screen-label={`Basecamp · ${variantLabel}`}
+        >
+          <BasecampSidebar tweaks={tweaks} completedSteps={completedSteps} />
+          <div className="app-main">
+            <BasecampTopBar
+              variantLabel={variantLabel}
+              tweaks={tweaks}
+              completedSteps={completedSteps}
+            />
+            <div style={{ overflow: "hidden", minHeight: 0, display: "flex", flexDirection: "column" }}>
+              <Variant tweaks={tweaks} />
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    function App() {
+      const [tweaks, setTweak] = useTweaks(TWEAK_DEFAULTS);
+
+      return (
+        <>
+          <DesignCanvas>
+            <DCSection
+              id="basecamp"
+              title="Basecamp — onboarding"
+              subtitle="Three takes on first-run for a chief-of-staff product. Same shell, three primary actions."
+            >
+              <DCArtboard id="trail-map"        label="A · Trail map"        width={1440} height={900}>
+                <Artboard variant="A" tweaks={tweaks} />
+              </DCArtboard>
+              <DCArtboard id="cadence-builder"  label="B · Cadence builder"  width={1440} height={900}>
+                <Artboard variant="B" tweaks={tweaks} />
+              </DCArtboard>
+              <DCArtboard id="week-grid"        label="C · Week grid"        width={1440} height={900}>
+                <Artboard variant="C" tweaks={tweaks} />
+              </DCArtboard>
+            </DCSection>
+          </DesignCanvas>
+
+          <TweaksPanel title="Basecamp">
+            <TweakSection label="State">
+              <TweakRadio
+                label="Engagement"
+                value={tweaks.state}
+                options={[
+                  { value: "empty",   label: "Empty" },
+                  { value: "mid",     label: "Mid" },
+                  { value: "handoff", label: "Handoff" },
+                ]}
+                onChange={(v) => setTweak("state", v)}
+              />
+              <TweakRadio
+                label="View"
+                value={tweaks.view}
+                options={[
+                  { value: "operator", label: "Operator" },
+                  { value: "client",   label: "Client" },
+                ]}
+                onChange={(v) => setTweak("view", v)}
+              />
+            </TweakSection>
+
+            <TweakSection label="Surface">
+              <TweakToggle
+                label="Dark mode"
+                value={tweaks.theme === "dark"}
+                onChange={(v) => setTweak("theme", v ? "dark" : "light")}
+              />
+              <TweakSelect
+                label="Sidebar"
+                value={tweaks.sidebar}
+                options={[
+                  { value: "expanded", label: "Expanded — 248px" },
+                  { value: "icon",     label: "Icon-only — 64px" },
+                  { value: "hidden",   label: "Hidden — no sidebar" },
+                ]}
+                onChange={(v) => setTweak("sidebar", v)}
+              />
+              <TweakRadio
+                label="Density"
+                value={tweaks.density}
+                options={[
+                  { value: "compact",  label: "Compact" },
+                  { value: "cozy",     label: "Cozy" },
+                  { value: "spacious", label: "Spacious" },
+                ]}
+                onChange={(v) => setTweak("density", v)}
+              />
+            </TweakSection>
+          </TweaksPanel>
+        </>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+  </script>
+</body>
+</html>

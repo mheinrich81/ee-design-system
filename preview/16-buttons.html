@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Components" name="Buttons" subtitle="Primary · Pine · Danger · Secondary · Ghost" viewport="700x230" -->
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+<style>
+  body { margin: 0; padding: 28px; background: var(--snow); display: grid; grid-template-columns: 1fr 1fr; gap: 14px 24px; align-items: center; }
+  .row { display: flex; gap: 12px; align-items: center; }
+  button { font-family: var(--font-sans); font-size: 14px; font-weight: 500; line-height: 1; border-radius: 10px; padding: 10px 16px; border: 1px solid transparent; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: background var(--dur-base) var(--ease-summit), color var(--dur-base) var(--ease-summit); }
+  button [data-lucide] { width: 16px; height: 16px; stroke-width: 1.75; }
+  .primary { background: var(--summit-500); color: white; }
+  .primary:hover { background: var(--summit-600); }
+  .secondary { background: white; color: var(--granite-900); border-color: var(--granite-200); }
+  .secondary:hover { background: var(--granite-50); }
+  .ghost { background: transparent; color: var(--granite-700); }
+  .ghost:hover { background: var(--granite-100); }
+  .danger { background: var(--danger); color: white; }
+  .accent { background: var(--pine-600); color: white; }
+  .accent:hover { background: var(--pine-700); }
+  .sm { padding: 6px 10px; font-size: 12px; border-radius: 8px; }
+  .lg { padding: 14px 22px; font-size: 16px; border-radius: 12px; }
+  .label { font-family: var(--font-mono); font-size: 11px; color: var(--granite-500); letter-spacing: 0.04em; text-transform: uppercase; }
+</style></head>
+<body>
+  <div class="label">Primary · Pine · Danger</div>
+  <div class="row">
+    <button class="primary"><i data-lucide="arrow-right"></i>Create initiative</button>
+    <button class="accent"><i data-lucide="check"></i>Mark done</button>
+    <button class="danger"><i data-lucide="trash-2"></i>Archive</button>
+  </div>
+  <div class="label">Secondary · Ghost</div>
+  <div class="row">
+    <button class="secondary"><i data-lucide="filter"></i>Filter</button>
+    <button class="ghost"><i data-lucide="more-horizontal"></i>More</button>
+    <button class="ghost"><i data-lucide="settings"></i>Settings</button>
+  </div>
+  <div class="label">Sizes — sm · md · lg</div>
+  <div class="row">
+    <button class="primary sm">Save</button>
+    <button class="primary">Save changes</button>
+    <button class="primary lg">Get started</button>
+  </div>
+  <script>lucide.createIcons();</script>
+</body></html>

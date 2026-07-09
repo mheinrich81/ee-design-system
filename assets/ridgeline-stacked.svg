@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" fill="none">
+  
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="oklch(83% 0.110 76)" stop-opacity="0.35"></stop>
+      <stop offset="60%" stop-color="oklch(94% 0.030 295)" stop-opacity="0.18"></stop>
+      <stop offset="100%" stop-color="oklch(98.5% 0.004 95)" stop-opacity="0"></stop>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="600" height="400" fill="url(#sky)"></rect>
+  
+  <circle cx="440" cy="130" r="36" fill="oklch(78% 0.130 75)" opacity="0.55"></circle>
+  
+  <path d="M0 320 L60 240 L120 280 L200 200 L280 270 L360 220 L440 290 L520 230 L600 300 L600 400 L0 400 Z" fill="oklch(78% 0.095 295)" opacity="0.6"></path>
+  
+  <path d="M0 360 L80 280 L160 320 L240 240 L320 310 L400 250 L480 320 L560 270 L600 340 L600 400 L0 400 Z" fill="oklch(54% 0.170 295)" opacity="0.75"></path>
+  
+  <path d="M236 244 L240 240 L246 248 L242 252 Z" fill="oklch(98.5% 0.004 95)" opacity="0.9"></path>
+  <path d="M396 254 L400 250 L406 258 L402 262 Z" fill="oklch(98.5% 0.004 95)" opacity="0.9"></path>
+  
+  <path d="M0 400 L40 360 L100 380 L180 340 L260 380 L340 350 L420 380 L500 355 L600 380 L600 400 Z" fill="oklch(35% 0.085 160)" opacity="0.9"></path>
+  <path d="M0 400 L60 385 L140 395 L220 375 L320 395 L400 380 L500 395 L580 385 L600 395 L600 400 Z" fill="oklch(21% 0.045 160)"></path>
+</svg>

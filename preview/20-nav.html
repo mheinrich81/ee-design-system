@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Components" name="Nav & tabs" subtitle="Sidebar items + underline tabs" viewport="700x240" -->
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+<style>
+  body { margin: 0; padding: 22px 28px; background: var(--snow); display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: stretch; }
+  .nav { background: white; border: 1px solid var(--granite-200); border-radius: 14px; padding: 8px; display: flex; flex-direction: column; gap: 2px; box-shadow: var(--elev-1); }
+  .item { display: flex; align-items: center; gap: 10px; padding: 8px 12px; border-radius: 8px; font-family: var(--font-sans); font-size: 14px; color: var(--granite-700); cursor: pointer; transition: background var(--dur-base) var(--ease-summit); }
+  .item [data-lucide] { width: 16px; height: 16px; stroke-width: 1.75; flex-shrink: 0; }
+  .item:hover { background: var(--granite-50); }
+  .item.active { background: var(--summit-50); color: var(--summit-800); font-weight: 500; }
+  .item.active [data-lucide] { color: var(--summit-600); }
+  .count { margin-left: auto; font-family: var(--font-mono); font-size: 11px; color: var(--granite-500); }
+  .item.active .count { color: var(--summit-700); }
+  .tabs { display: flex; gap: 0; border-bottom: 1px solid var(--granite-200); align-self: start; padding-top: 14px; }
+  .tab { padding: 8px 16px; font-family: var(--font-sans); font-size: 14px; font-weight: 500; color: var(--granite-600); border-bottom: 2px solid transparent; cursor: pointer; transition: color var(--dur-base) var(--ease-summit), border-color var(--dur-base) var(--ease-summit); margin-bottom: -1px; }
+  .tab:hover { color: var(--granite-900); }
+  .tab.active { color: var(--summit-700); border-bottom-color: var(--summit-500); }
+</style></head>
+<body>
+  <div class="nav">
+    <div class="item active"><i data-lucide="layout-dashboard"></i>Overview<span class="count">—</span></div>
+    <div class="item"><i data-lucide="target"></i>Initiatives<span class="count">12</span></div>
+    <div class="item"><i data-lucide="check-square"></i>Decisions<span class="count">4</span></div>
+    <div class="item"><i data-lucide="users"></i>Owners<span class="count">28</span></div>
+    <div class="item"><i data-lucide="calendar"></i>Milestones<span class="count">37</span></div>
+  </div>
+  <div>
+    <div class="tabs">
+      <div class="tab active">All</div>
+      <div class="tab">Mine</div>
+      <div class="tab">At risk</div>
+      <div class="tab">Archived</div>
+    </div>
+    <div style="font-family:var(--font-mono);font-size:11px;color:var(--granite-500);letter-spacing:0.04em;text-transform:uppercase;margin-top:24px;">Nav item · Tabs</div>
+  </div>
+  <script>lucide.createIcons();</script>
+</body></html>

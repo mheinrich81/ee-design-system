@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Components" name="Empty state & toast" subtitle="Empty state · brand toast · success toast" viewport="700x250" -->
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+<style>
+  body { margin: 0; padding: 28px; background: var(--snow); display: grid; grid-template-columns: 1fr 1fr; gap: 22px; align-items: center; }
+  .empty { background: white; border: 1px dashed var(--granite-300); border-radius: 14px; padding: 24px 22px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px; position: relative; overflow: hidden; }
+  .empty .icon { width: 44px; height: 44px; border-radius: 12px; background: var(--summit-50); color: var(--summit-600); display: grid; place-items: center; }
+  .empty .icon [data-lucide] { width: 22px; height: 22px; stroke-width: 1.5; }
+  .empty h4 { margin: 0; font-family: var(--font-display); font-size: 18px; font-weight: 500; color: var(--granite-950); }
+  .empty p { margin: 0; font-family: var(--font-sans); font-size: 13px; color: var(--granite-500); max-width: 280px; line-height: 1.55; }
+  .btn { font-family: var(--font-sans); font-size: 13px; font-weight: 500; background: var(--summit-500); color: white; border: 0; border-radius: 8px; padding: 8px 14px; cursor: pointer; }
+  /* Toast */
+  .toast { background: var(--granite-950); color: white; border-radius: 12px; padding: 14px 18px; display: flex; align-items: center; gap: 12px; box-shadow: var(--elev-3); font-family: var(--font-sans); font-size: 14px; }
+  .toast .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--pine-400); flex-shrink: 0; }
+  .toast .undo { margin-left: auto; color: var(--alpenglow-300); font-weight: 500; cursor: pointer; }
+</style></head>
+<body>
+  <div class="empty">
+    <div class="icon"><i data-lucide="mountain-snow"></i></div>
+    <h4>Nothing in flight yet</h4>
+    <p>Create an initiative to start tracking owners, decisions, and dates.</p>
+    <button class="btn">Create initiative</button>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:12px;align-items:flex-start;">
+    <div class="toast"><span class="dot"></span>Initiative archived.<span class="undo">Undo</span></div>
+    <div class="toast" style="background:white;color:var(--granite-900);border:1px solid var(--granite-200);"><i data-lucide="check-circle-2" style="width:16px;height:16px;color:var(--pine-600);"></i>Decision recorded · Mira approved scope</div>
+  </div>
+  <script>lucide.createIcons();</script>
+</body></html>

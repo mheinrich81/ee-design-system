@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Components" name="Avatars" subtitle="Sizes + stacked group" viewport="700x150" -->
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 28px; background: var(--snow); display: flex; gap: 18px; align-items: center; justify-content: space-around; flex-wrap: wrap; }
+  .item { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+  .av { display: grid; place-items: center; font-family: var(--font-sans); font-weight: 600; }
+  .lg { width: 56px; height: 56px; border-radius: 50%; font-size: 18px; background: var(--summit-200); color: var(--summit-800); }
+  .md { width: 36px; height: 36px; border-radius: 50%; font-size: 13px; background: var(--pine-200); color: var(--pine-800); }
+  .sm { width: 24px; height: 24px; border-radius: 50%; font-size: 10px; background: var(--alpenglow-200); color: var(--alpenglow-800); }
+  .stack { display: flex; }
+  .stack .av { border: 2px solid white; margin-left: -10px; }
+  .stack .av:first-child { margin-left: 0; }
+  .more { background: var(--granite-100); color: var(--granite-700); font-family: var(--font-mono); }
+  .label { font-family: var(--font-mono); font-size: 10px; color: var(--granite-500); letter-spacing: 0.04em; text-transform: uppercase; }
+</style></head>
+<body>
+  <div class="item"><div class="av lg">MS</div><div class="label">large · 56</div></div>
+  <div class="item"><div class="av md">AO</div><div class="label">medium · 36</div></div>
+  <div class="item"><div class="av sm">JK</div><div class="label">small · 24</div></div>
+  <div class="item">
+    <div class="stack">
+      <div class="av md">MS</div>
+      <div class="av md" style="background:var(--pine-200);color:var(--pine-800)">AO</div>
+      <div class="av md" style="background:var(--alpenglow-200);color:var(--alpenglow-800)">JK</div>
+      <div class="av md more">+3</div>
+    </div>
+    <div class="label">stacked</div>
+  </div>
+</body></html>

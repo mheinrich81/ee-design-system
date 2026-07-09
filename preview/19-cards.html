@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Components" name="Initiative cards" subtitle="Card with status pill + progress" viewport="700x240" -->
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+<style>
+  body { margin: 0; padding: 24px 28px; background: var(--snow); display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .card { background: white; border: 1px solid var(--granite-200); border-radius: 14px; padding: 20px 22px; box-shadow: var(--elev-1); display: flex; flex-direction: column; gap: 12px; }
+  .head { display: flex; justify-content: space-between; align-items: flex-start; }
+  .title { font-family: var(--font-display); font-size: 18px; font-weight: 500; color: var(--granite-950); letter-spacing: -0.005em; }
+  .sub { font-family: var(--font-sans); font-size: 13px; color: var(--granite-500); margin-top: 2px; }
+  .pill { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-sans); font-size: 11px; font-weight: 500; padding: 3px 8px; border-radius: 999px; background: var(--pine-50); color: var(--pine-800); }
+  .pill .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--pine-500); }
+  .progress { height: 6px; background: var(--granite-100); border-radius: 999px; overflow: hidden; }
+  .progress .bar { height: 100%; background: var(--summit-500); border-radius: 999px; }
+  .meta { display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 11px; color: var(--granite-600); }
+  .avatars { display: flex; }
+  .avatar { width: 22px; height: 22px; border-radius: 50%; border: 2px solid white; margin-left: -6px; background: var(--summit-200); color: var(--summit-800); font-family: var(--font-sans); font-size: 10px; font-weight: 600; display: grid; place-items: center; }
+  .avatar:first-child { margin-left: 0; }
+  .avatar.b { background: var(--pine-200); color: var(--pine-800); }
+  .avatar.c { background: var(--alpenglow-200); color: var(--alpenglow-800); }
+</style></head>
+<body>
+  <div class="card">
+    <div class="head">
+      <div><div class="title">Q3 platform reliability</div><div class="sub">12 milestones · 4 owners</div></div>
+      <span class="pill"><span class="dot"></span>On track</span>
+    </div>
+    <div class="progress"><div class="bar" style="width:62%"></div></div>
+    <div class="meta"><span>62% complete</span><span>Due Sep 30</span></div>
+  </div>
+  <div class="card">
+    <div class="head">
+      <div><div class="title">Onboarding redesign</div><div class="sub">8 milestones · 2 decisions open</div></div>
+      <span class="pill" style="background:var(--alpenglow-100);color:var(--alpenglow-800);"><span class="dot" style="background:var(--alpenglow-500)"></span>At risk</span>
+    </div>
+    <div class="progress"><div class="bar" style="width:34%;background:var(--alpenglow-500)"></div></div>
+    <div class="meta">
+      <div class="avatars"><div class="avatar">MS</div><div class="avatar b">AO</div><div class="avatar c">JK</div></div>
+      <span>Due Aug 12</span>
+    </div>
+  </div>
+  <script>lucide.createIcons();</script>
+</body></html>

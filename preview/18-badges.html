@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Components" name="Badges & tags" subtitle="Status pills + label tags" viewport="700x150" -->
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 28px; background: var(--snow); display: flex; flex-direction: column; gap: 14px; }
+  .row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  .badge { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-sans); font-size: 12px; font-weight: 500; padding: 4px 10px; border-radius: 999px; line-height: 1.4; }
+  .badge .dot { width: 6px; height: 6px; border-radius: 50%; }
+  .on-track { background: var(--pine-50); color: var(--pine-800); }
+  .at-risk { background: var(--alpenglow-100); color: var(--alpenglow-800); }
+  .slipped { background: var(--danger-bg); color: oklch(40% 0.180 28); }
+  .planned { background: var(--summit-50); color: var(--summit-800); }
+  .done { background: var(--granite-100); color: var(--granite-700); text-decoration: line-through; }
+  .tag { display: inline-flex; align-items: center; font-family: var(--font-sans); font-size: 12px; font-weight: 500; padding: 2px 8px; border-radius: 6px; background: var(--granite-100); color: var(--granite-700); border: 1px solid var(--granite-200); }
+  .tag.brand { background: var(--summit-50); color: var(--summit-700); border-color: var(--summit-200); }
+  .tag.green { background: var(--pine-50); color: var(--pine-700); border-color: var(--pine-200); }
+  .label { font-family: var(--font-mono); font-size: 11px; color: var(--granite-500); letter-spacing: 0.04em; text-transform: uppercase; min-width: 70px; }
+</style></head>
+<body>
+  <div class="row">
+    <span class="label">Status</span>
+    <span class="badge on-track"><span class="dot" style="background:var(--pine-500)"></span>On track</span>
+    <span class="badge at-risk"><span class="dot" style="background:var(--alpenglow-500)"></span>At risk</span>
+    <span class="badge slipped"><span class="dot" style="background:var(--danger)"></span>Slipped</span>
+    <span class="badge planned"><span class="dot" style="background:var(--summit-500)"></span>Planned</span>
+    <span class="badge done">Done</span>
+  </div>
+  <div class="row">
+    <span class="label">Tags</span>
+    <span class="tag brand">platform</span>
+    <span class="tag green">growth</span>
+    <span class="tag">customer-success</span>
+    <span class="tag">Q3</span>
+    <span class="tag">priority · 1</span>
+  </div>
+</body></html>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 220" preserveAspectRatio="none" fill="none">
+  
+  <path d="M0 175 L 110 142 L 215 168 L 335 128 L 450 158 L 575 122 L 690 154 L 815 118 L 940 150 L 1060 130 L 1175 152 L 1300 134 L 1440 158 L 1440 220 L 0 220 Z" fill="oklch(54% 0.170 295)" opacity="0.18"></path>
+  
+  <path d="M0 200 L 90 168 L 175 188 L 285 148 L 395 180 L 510 142 L 615 178 L 740 138 L 855 174 L 975 150 L 1090 184 L 1210 156 L 1325 182 L 1440 168 L 1440 220 L 0 220 Z" fill="oklch(45% 0.165 295)" opacity="0.32"></path>
+  
+  <path d="M0 220 L 70 196 L 165 208 L 260 184 L 360 204 L 470 178 L 580 200 L 700 174 L 815 200 L 925 184 L 1050 204 L 1165 188 L 1285 206 L 1400 192 L 1440 200 L 1440 220 Z" fill="oklch(22% 0.080 295)" opacity="0.55"></path>
+</svg>

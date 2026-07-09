@@ -1,0 +1,391 @@
+/* ============================================================
+   Elevate Execution — Design Tokens
+   colors_and_type.css
+   ============================================================
+   Drawn from the Rocky Mountains west of Calgary:
+   Summit Purple   — twilight shadow on a peak
+   Pine            — evergreen forest below treeline
+   Alpenglow       — warm gold on high snow at sunrise
+   Granite         — warm-neutral rock greys
+   Snow            — off-white, never pure #FFF
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400..700&family=JetBrains+Mono:wght@400..600&display=swap');
+
+/* ------------------------------------------------------------
+   BODY / UI FONT — Barlow Condensed (sans)
+   Condensed humanist sans. Pairs with Space Grotesk for a clean,
+   vertical type system. Open Font License — local files only.
+   ------------------------------------------------------------ */
+@font-face {
+  font-family: 'Barlow Condensed';
+  src: url('fonts/BarlowCondensed-Light.ttf') format('truetype');
+  font-weight: 300; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Barlow Condensed';
+  src: url('fonts/BarlowCondensed-LightItalic.ttf') format('truetype');
+  font-weight: 300; font-style: italic; font-display: swap;
+}
+@font-face {
+  font-family: 'Barlow Condensed';
+  src: url('fonts/BarlowCondensed-Regular.ttf') format('truetype');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Barlow Condensed';
+  src: url('fonts/BarlowCondensed-Italic.ttf') format('truetype');
+  font-weight: 400; font-style: italic; font-display: swap;
+}
+@font-face {
+  font-family: 'Barlow Condensed';
+  src: url('fonts/BarlowCondensed-Medium.ttf') format('truetype');
+  font-weight: 500; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Barlow Condensed';
+  src: url('fonts/BarlowCondensed-MediumItalic.ttf') format('truetype');
+  font-weight: 500; font-style: italic; font-display: swap;
+}
+@font-face {
+  font-family: 'Barlow Condensed';
+  src: url('fonts/BarlowCondensed-SemiBold.ttf') format('truetype');
+  font-weight: 600; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Barlow Condensed';
+  src: url('fonts/BarlowCondensed-SemiBoldItalic.ttf') format('truetype');
+  font-weight: 600; font-style: italic; font-display: swap;
+}
+@font-face {
+  font-family: 'Barlow Condensed';
+  src: url('fonts/BarlowCondensed-Bold.ttf') format('truetype');
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Barlow Condensed';
+  src: url('fonts/BarlowCondensed-BoldItalic.ttf') format('truetype');
+  font-weight: 700; font-style: italic; font-display: swap;
+}
+
+/* ------------------------------------------------------------
+   DISPLAY FONT — Space Grotesk (Google Fonts, loaded via @import above)
+   Geometric grotesque used at large sizes for hero titles and
+   headings. No local @font-face required.
+   ------------------------------------------------------------ */
+
+:root {
+  /* ----------------------------------------------------------
+     COLOR — primary palette (50 → 950 scales, OKLCH)
+     ---------------------------------------------------------- */
+
+  /* Summit Purple — the brand color */
+  --summit-50:  oklch(97.5% 0.015 295);
+  --summit-100: oklch(94%   0.030 295);
+  --summit-200: oklch(88%   0.055 295);
+  --summit-300: oklch(78%   0.095 295);
+  --summit-400: oklch(66%   0.140 295);
+  --summit-500: oklch(54%   0.170 295);  /* core brand */
+  --summit-600: oklch(45%   0.165 295);
+  --summit-700: oklch(37%   0.140 295);
+  --summit-800: oklch(29%   0.110 295);
+  --summit-900: oklch(22%   0.080 295);
+  --summit-950: oklch(15%   0.055 295);
+
+  /* Pine Green — second anchor */
+  --pine-50:  oklch(97% 0.020 160);
+  --pine-100: oklch(93% 0.040 160);
+  --pine-200: oklch(86% 0.070 160);
+  --pine-300: oklch(75% 0.105 160);
+  --pine-400: oklch(63% 0.115 160);
+  --pine-500: oklch(52% 0.115 160);  /* core pine */
+  --pine-600: oklch(43% 0.100 160);
+  --pine-700: oklch(35% 0.085 160);
+  --pine-800: oklch(28% 0.065 160);
+  --pine-900: oklch(21% 0.045 160);
+  --pine-950: oklch(15% 0.030 160);
+
+  /* Alpenglow Gold — accent (muted, not cartoonish) */
+  --alpenglow-50:  oklch(97%   0.025 80);
+  --alpenglow-100: oklch(94%   0.050 80);
+  --alpenglow-200: oklch(89%   0.080 78);
+  --alpenglow-300: oklch(83%   0.110 76);
+  --alpenglow-400: oklch(78%   0.130 75);  /* core gold */
+  --alpenglow-500: oklch(70%   0.135 72);
+  --alpenglow-600: oklch(60%   0.125 65);
+  --alpenglow-700: oklch(50%   0.110 58);
+  --alpenglow-800: oklch(40%   0.090 52);
+  --alpenglow-900: oklch(30%   0.065 50);
+  --alpenglow-950: oklch(20%   0.040 50);
+
+  /* Granite — warm-neutral greys with a violet undertone */
+  --granite-50:  oklch(98%  0.005 285);
+  --granite-100: oklch(96%  0.006 285);
+  --granite-200: oklch(92%  0.008 285);
+  --granite-300: oklch(85%  0.010 285);
+  --granite-400: oklch(70%  0.012 285);
+  --granite-500: oklch(56%  0.014 285);
+  --granite-600: oklch(44%  0.014 285);
+  --granite-700: oklch(34%  0.013 285);
+  --granite-800: oklch(25%  0.012 285);
+  --granite-900: oklch(18%  0.012 285);
+  --granite-950: oklch(12%  0.012 285);
+
+  /* Snow — off-white page background */
+  --snow:        oklch(98.5% 0.004 95);
+  --snow-warm:   oklch(97%   0.008 85);
+
+  /* ----------------------------------------------------------
+     COLOR — semantic tokens
+     ---------------------------------------------------------- */
+
+  --bg-page:     var(--snow);
+  --bg-surface:  #ffffff;
+  --bg-subtle:   var(--granite-50);
+  --bg-muted:    var(--granite-100);
+  --bg-inverse:  var(--granite-950);
+
+  --fg-1:        var(--granite-950);  /* primary text */
+  --fg-2:        var(--granite-700);  /* secondary */
+  --fg-3:        var(--granite-500);  /* tertiary / placeholder */
+  --fg-inverse:  var(--snow);
+
+  --brand:           var(--summit-500);
+  --brand-hover:     var(--summit-600);
+  --brand-fg:        #ffffff;
+  --accent:          var(--pine-500);
+  --highlight:       var(--alpenglow-400);
+
+  --border-default:  var(--granite-200);
+  --border-strong:   var(--granite-300);
+  --border-focus:    var(--summit-500);
+
+  --success:         var(--pine-500);
+  --success-bg:      var(--pine-50);
+  --warning:         var(--alpenglow-500);
+  --warning-bg:      var(--alpenglow-50);
+  --danger:          oklch(58% 0.180 28);
+  --danger-bg:       oklch(96% 0.025 28);
+  --info:            var(--summit-500);
+  --info-bg:         var(--summit-50);
+
+  /* Signature alpenglow gradient — used at MOST once per page */
+  --gradient-alpenglow:
+    linear-gradient(135deg,
+      var(--alpenglow-400) 0%,
+      var(--summit-600) 100%);
+
+  --gradient-twilight:
+    linear-gradient(180deg,
+      var(--summit-700) 0%,
+      var(--granite-950) 100%);
+
+  /* ----------------------------------------------------------
+     TYPE — families
+     ---------------------------------------------------------- */
+
+  --font-display: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  --font-sans:    'Barlow Condensed', 'Barlow', 'Oswald', ui-sans-serif, system-ui, sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  /* ----------------------------------------------------------
+     TYPE — scale (modular ~1.2)
+     ---------------------------------------------------------- */
+
+  --text-xs:    12px;
+  --text-sm:    14px;
+  --text-base:  16px;
+  --text-md:    18px;
+  --text-lg:    20px;
+  --text-xl:    24px;
+  --text-2xl:   30px;
+  --text-3xl:   38px;
+  --text-4xl:   48px;
+  --text-5xl:   60px;
+  --text-6xl:   76px;
+  --text-7xl:   96px;
+
+  --leading-tight:   1.1;
+  --leading-snug:    1.25;
+  --leading-normal:  1.5;
+  --leading-relaxed: 1.65;
+
+  --tracking-tight:  -0.02em;
+  --tracking-snug:   -0.01em;
+  --tracking-normal: 0;
+  --tracking-wide:    0.04em;
+  --tracking-caps:    0.08em;
+
+  /* ----------------------------------------------------------
+     SPACING — 4px base
+     ---------------------------------------------------------- */
+
+  --space-0:   0;
+  --space-1:   4px;
+  --space-2:   8px;
+  --space-3:   12px;
+  --space-4:   16px;
+  --space-5:   20px;
+  --space-6:   24px;
+  --space-8:   32px;
+  --space-10:  40px;
+  --space-12:  48px;
+  --space-16:  64px;
+  --space-20:  80px;
+  --space-24:  96px;
+  --space-32:  128px;
+
+  /* ----------------------------------------------------------
+     RADII
+     ---------------------------------------------------------- */
+
+  --radius-sm:   6px;
+  --radius-md:   10px;
+  --radius-lg:   14px;
+  --radius-xl:   22px;
+  --radius-2xl:  32px;
+  --radius-full: 999px;
+
+  /* ----------------------------------------------------------
+     ELEVATION — colored shadows (Summit Purple tint)
+     ---------------------------------------------------------- */
+
+  --elev-1:
+    0 1px 2px oklch(20% 0.080 295 / 0.06),
+    0 1px 1px oklch(20% 0.080 295 / 0.04);
+
+  --elev-2:
+    0 4px 12px oklch(20% 0.080 295 / 0.08),
+    0 2px 4px  oklch(20% 0.080 295 / 0.05);
+
+  --elev-3:
+    0 16px 40px oklch(20% 0.080 295 / 0.14),
+    0 6px 12px  oklch(20% 0.080 295 / 0.08);
+
+  --ring-focus:
+    0 0 0 3px oklch(54% 0.170 295 / 0.25);
+
+  /* ----------------------------------------------------------
+     MOTION
+     ---------------------------------------------------------- */
+
+  --ease-summit: cubic-bezier(0.2, 0.8, 0.2, 1); /* @kind other */
+  --dur-micro: 120ms; /* @kind other */
+  --dur-base:  200ms; /* @kind other */
+  --dur-large: 320ms; /* @kind other */
+}
+
+/* ============================================================
+   BASE — body + reset essentials
+   ============================================================ */
+
+html, body {
+  background: var(--bg-page);
+  color: var(--fg-1);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================================
+   TYPE — semantic role classes
+   ============================================================ */
+
+.t-display, h1.display {
+  font-family: var(--font-display);
+  font-size: var(--text-6xl);
+  font-weight: 500;
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--fg-1);
+}
+
+.t-h1, h1 {
+  font-family: var(--font-display);
+  font-size: var(--text-4xl);
+  font-weight: 500;
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--fg-1);
+}
+
+.t-h2, h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: 500;
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--fg-1);
+}
+
+.t-h3, h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 500;
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-snug);
+  color: var(--fg-1);
+}
+
+.t-h4, h4 {
+  font-family: var(--font-sans);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  line-height: var(--leading-snug);
+  color: var(--fg-1);
+}
+
+.t-eyebrow {
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: var(--tracking-caps);
+  text-transform: uppercase;
+  color: var(--summit-600);
+}
+
+.t-body, p {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  color: var(--fg-2);
+  text-wrap: pretty;
+}
+
+.t-lead {
+  font-family: var(--font-sans);
+  font-size: var(--text-md);
+  line-height: var(--leading-relaxed);
+  color: var(--fg-2);
+}
+
+.t-small {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
+  color: var(--fg-2);
+}
+
+.t-caption {
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  line-height: var(--leading-normal);
+  color: var(--fg-3);
+}
+
+.t-mono, code, kbd, pre {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  letter-spacing: -0.01em;
+}
+
+.t-metric {
+  font-family: var(--font-mono);
+  font-size: var(--text-3xl);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+  color: var(--fg-1);
+}

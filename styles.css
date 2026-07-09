@@ -1,0 +1,10 @@
+/* ============================================================
+   Elevate Execution — global stylesheet entry
+   ------------------------------------------------------------
+   Single entry point for the design system. Pulls in the
+   canonical token + type closure (via colors_and_type.css,
+   which re-exports site/colors_and_type.css). Consumers and the
+   compiler can rely on this one file for all global tokens,
+   @font-face declarations, and base element styles.
+   ============================================================ */
+@import url('colors_and_type.css');

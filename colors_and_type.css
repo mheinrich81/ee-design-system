@@ -1,0 +1,13 @@
+/* ============================================================
+   Elevate Execution — design tokens (re-export)
+   ------------------------------------------------------------
+   The canonical tokens + @font-face declarations live in
+   site/colors_and_type.css — the same self-contained stylesheet
+   that ships with the deployable marketing site (site/), so the
+   site has zero external dependencies when hosted on its own.
+
+   This root file re-exports that single source so design-system
+   previews, ui_kits, and consumers can keep linking
+   ./colors_and_type.css without duplicating @font-face rules.
+   ============================================================ */
+@import url('site/colors_and_type.css');

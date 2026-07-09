@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Colors" name="Pine Green" subtitle="Second anchor · 11-step ramp" viewport="700x160" -->
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 24px 28px; background: var(--snow); }
+  .head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 14px; }
+  .name { font-family: var(--font-display); font-size: 22px; font-weight: 500; color: var(--granite-950); }
+  .desc { font-family: var(--font-sans); font-size: 13px; color: var(--granite-500); }
+  .ramp { display: grid; grid-template-columns: repeat(11, 1fr); gap: 4px; }
+  .sw { aspect-ratio: 1.4 / 1; border-radius: 8px; display: flex; flex-direction: column; justify-content: flex-end; padding: 6px 8px; font-family: var(--font-mono); font-size: 10px; color: rgba(255,255,255,0.85); }
+  .sw.lite { color: oklch(20% 0.012 285); }
+</style></head>
+<body>
+  <div class="head">
+    <div class="name">Pine Green <span style="font-family:var(--font-mono);font-size:11px;color:var(--granite-400);margin-left:8px;">— second anchor</span></div>
+    <div class="desc">Evergreen below treeline</div>
+  </div>
+  <div class="ramp">
+    <div class="sw lite" style="background:var(--pine-50)">50</div>
+    <div class="sw lite" style="background:var(--pine-100)">100</div>
+    <div class="sw lite" style="background:var(--pine-200)">200</div>
+    <div class="sw lite" style="background:var(--pine-300)">300</div>
+    <div class="sw" style="background:var(--pine-400)">400</div>
+    <div class="sw" style="background:var(--pine-500);outline:2px solid var(--granite-950);outline-offset:2px">500</div>
+    <div class="sw" style="background:var(--pine-600)">600</div>
+    <div class="sw" style="background:var(--pine-700)">700</div>
+    <div class="sw" style="background:var(--pine-800)">800</div>
+    <div class="sw" style="background:var(--pine-900)">900</div>
+    <div class="sw" style="background:var(--pine-950)">950</div>
+  </div>
+</body></html>

@@ -1,0 +1,14 @@
+# macOS
+.DS_Store
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Design-tool preview thumbnail
+.thumbnail
+
+# Raw uploads / staging — NOT part of the design system source.
+# Keeps the resume PDF and redundant raw font drops out of the repo.
+uploads/
