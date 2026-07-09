@@ -1,10 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" fill="none">
-  
-  
-  <path d="M120,110 C480,110 720,490 1080,490" stroke="oklch(54% 0.170 295)" stroke-width="6" stroke-linecap="round"></path>
-  
-  <path d="M120,510 C480,510 720,130 1080,130" stroke="oklch(52% 0.115 160)" stroke-width="6" stroke-linecap="round"></path>
-  
-  <circle cx="120" cy="110" r="10" fill="oklch(54% 0.170 295)"></circle>
-  <circle cx="120" cy="510" r="10" fill="oklch(52% 0.115 160)"></circle>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" fill="none" role="img" aria-label="Strategy descends while execution ascends">
+  <style>
+    .ee-line { stroke-dasharray: 100; stroke-dashoffset: 100; animation: ee-draw 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+    .ee-descend { animation-delay: 0.15s; }
+    .ee-ascend { animation-delay: 0.9s; }
+    .ee-dot { opacity: 0; animation: ee-pop 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+    .ee-dot-1 { animation-delay: 0s; }
+    .ee-dot-2 { animation-delay: 0.75s; }
+    @keyframes ee-draw { to { stroke-dashoffset: 0; } }
+    @keyframes ee-pop { to { opacity: 1; } }
+    @media (prefers-reduced-motion: reduce) {
+      .ee-line { animation: none; stroke-dashoffset: 0; }
+      .ee-dot { animation: none; opacity: 1; }
+    }
+  </style>
+  <path class="ee-line ee-descend" pathLength="100" d="M120,110 C480,110 720,490 1080,490" stroke="oklch(52% 0.115 160)" stroke-width="6" stroke-linecap="round"></path>
+  <path class="ee-line ee-ascend" pathLength="100" d="M120,510 C480,510 720,130 1080,130" stroke="oklch(54% 0.170 295)" stroke-width="6" stroke-linecap="round"></path>
+  <circle class="ee-dot ee-dot-1" cx="120" cy="110" r="10" fill="oklch(52% 0.115 160)"></circle>
+  <circle class="ee-dot ee-dot-2" cx="120" cy="510" r="10" fill="oklch(54% 0.170 295)"></circle>
 </svg>

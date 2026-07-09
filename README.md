@@ -218,7 +218,7 @@ Beyond Lucide, the system carries a small set of bespoke marks:
 - `assets/logo-mark.svg` — square brand mark (three peaks)
 - `assets/ridgeline.svg` — decorative horizon, used in hero/footer
 - `assets/ridgeline-stacked.svg` — taller layered variant for empty states
-- `assets/ascend-descend.svg` — the "strategy descends / execution ascends" motif: a Summit-purple line descending and a Pine-green line ascending, crossing at center, a dot at each origin. Use once per page as a hero accent beneath the headline. Do not redraw — reference it.
+- `assets/ascend-descend.svg` — the "strategy descends / execution ascends" motif: a Pine-green line descending (strategy) and a Summit-purple line ascending (execution — matching the purple emphasis on "Execution" in the headline), crossing at center, a dot at each origin. Animated: the lines draw on in sequence (descend first, then ascend), with a `prefers-reduced-motion` fallback to the static state. Use once per page as a hero accent beneath the headline. Do not redraw — reference it.
 
 All bespoke marks live in `assets/`. Do not redraw them; reference them.
 
